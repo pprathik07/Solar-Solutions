@@ -19,7 +19,7 @@ const ROICalculator = memo(() => {
     const annualSavings = pricing.monthlyBillSave * 12;
     const paybackPeriod = pricing.customerPays / annualSavings;
     
-    // Calculation: Per 1kW = 120 units/month × ?8/unit × 12 months × 25 years = ?288,000
+    // Calculation: Per 1kW = 120 units/month × ₹8/unit × 12 months × 25 years = ₹288,000
     const savingsPerKw = 288000;
     const totalSavings25Years = systemSize * savingsPerKw;
 
@@ -127,7 +127,7 @@ const ROICalculator = memo(() => {
                 </div>
               </div>
 
-              {/* 25-Year Total Savings: Per 1kW = ?288,000 (120 units × ?8 × 12 months × 25 years) */}
+              {/* 25-Year Total Savings: Per 1kW = ₹288,000 (120 units × ₹8 × 12 months × 25 years) */}
               <div className="bg-gradient-to-r from-gold/20 to-yellow-500/20 p-4 rounded-xl mb-6">
                 <div className="text-gold font-semibold text-sm mb-1">25-Year Electricity Bill Savings</div>
                 <div className="text-3xl font-bold text-midnight">{formatCurrency(results.totalSavings25Years)}</div>
@@ -162,7 +162,7 @@ const ROICalculator = memo(() => {
                     <div className="space-y-4 text-left">
                       {[
                         { icon: '✓', text: 'Save up to 90% on electricity bills' },
-                        { icon: '✓', text: 'Government subsidy up to ?78,000' },
+                        { icon: '✓', text: 'Government subsidy up to ₹78,000' },
                         { icon: '✓', text: '25-year panel warranty' },
                         { icon: '✓', text: 'ROI in just 3-4 years' },
                         { icon: '✓', text: 'Increase property value' },

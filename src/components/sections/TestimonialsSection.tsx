@@ -9,22 +9,22 @@ const testimonials = [
     name: 'Satya narayana',
     role: 'Homeowner - Nacharam',
     rating: 5,
-    text: 'Our electricity bill dropped from ?2000 to just ?150! with ROI of ?10000 which was installed 5 years ago and Installation was quick and the team helped with all subsidy paperwork.',
-    savings: 'Saving: ?1850/month'
+    text: 'Our electricity bill dropped from ₹2000 to just ₹150! with ROI of ₹10000 which was installed 5 years ago and Installation was quick and the team helped with all subsidy paperwork.',
+    savings: 'Saving: ₹1850/month'
   },
   {
     name: 'Priya Industries',
     role: 'Manufacturing Unit - Medchal',
     rating: 5,
     text: 'Cut our operational costs by 70%. The ROI was achieved in just 3.5 years. Highly recommend for commercial installations!',
-    savings: 'Saving: ?2.8L/month'
+    savings: 'Saving: ₹2.8L/month'
   },
   {
     name: 'Venkat Rao',
     role: 'Villa Owner - Hiyathnagar',
     rating: 5,
     text: '(installed 13kw, per month 12000-13000, reducted to rs300) After-sales service is exceptional. They replaced my inverter within 48 hours under warranty at no cost. True professionals!',
-    savings: 'Saving: ?12000/month'
+    savings: 'Saving: ₹12000/month'
   }
 ];
 

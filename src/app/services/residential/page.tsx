@@ -47,7 +47,7 @@ export default function ResidentialPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-midnight mb-6">
-            Investment: ?2-6 Lakhs (after subsidy)
+            Investment: ₹2-6 Lakhs (after subsidy)
           </h2>
           <p className="text-xl text-slate mb-8">Typical ROI: 3-4 years | Avg Bill Reduction: 80-90%</p>
           <a href="tel:+916281253858">

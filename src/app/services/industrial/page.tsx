@@ -42,7 +42,7 @@ export default function IndustrialPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-midnight mb-6">
-            Investment: ?50 Lakhs - ?5 Crores+
+            Investment: ₹50 Lakhs - ₹5 Crores+
           </h2>
           <p className="text-xl text-slate mb-8">ROI: 3-4.5 years | Cost Reduction: 50-70%</p>
           <a href="tel:+916281253858">

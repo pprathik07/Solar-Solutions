@@ -42,7 +42,7 @@ export default function CommercialPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-midnight mb-6">
-            Investment: ?5-50 Lakhs
+            Investment: ₹5-50 Lakhs
           </h2>
           <p className="text-xl text-slate mb-8">ROI: 3-4 years | Cost Reduction: 60-80%</p>
           <a href="tel:+916281253858">
