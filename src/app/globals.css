@@ -6,14 +6,34 @@
   body {
     @apply bg-white text-midnight;
   }
+  
+  /* Better font smoothing */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent text from being too small on mobile */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 }
 
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -27,4 +47,31 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #FFA500, #FF8C00);
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Better button tap on mobile */
+button, a {
+  -webkit-tap-highlight-color: rgba(255, 183, 3, 0.2);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #FFB703;
+  outline-offset: 2px;
+}
+
+/* Disable focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
 }

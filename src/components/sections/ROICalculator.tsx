@@ -18,8 +18,6 @@ const ROICalculator = memo(() => {
 
     const annualSavings = pricing.monthlyBillSave * 12;
     const paybackPeriod = pricing.customerPays / annualSavings;
-    
-    // Calculation: Per 1kW = 120 units/month × ₹8/unit × 12 months × 25 years = ₹288,000
     const savingsPerKw = 288000;
     const totalSavings25Years = systemSize * savingsPerKw;
 
@@ -34,32 +32,33 @@ const ROICalculator = memo(() => {
   if (!results) return null;
 
   return (
-    <section id="calculator" className="py-20 bg-gradient-to-b from-pearl to-white">
+    <section id="calculator" className="py-10 sm:py-12 md:py-16 bg-gradient-to-b from-pearl to-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-gold/10 px-4 py-2 rounded-full mb-4">
-            <Calculator className="w-5 h-5 text-gold" />
-            <span className="text-gold font-semibold">ROI Calculator</span>
+        {/* Header - Much smaller */}
+        <div className="text-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 bg-gold/10 px-3 py-1.5 rounded-full mb-2 sm:mb-3">
+            <Calculator className="w-3 h-3 sm:w-4 sm:h-4 text-gold" />
+            <span className="text-gold font-semibold text-xs sm:text-sm">ROI Calculator</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-midnight mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-midnight mb-2 sm:mb-3">
             Calculate Your Savings
           </h2>
-          <p className="text-xl text-slate max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm md:text-base text-slate max-w-2xl mx-auto px-4">
             Get instant pricing with government subsidy breakdown
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* LEFT: Calculator */}
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-steel/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 items-start">
+            {/* LEFT: Calculator - Smaller */}
+            <div className="bg-white rounded-lg sm:rounded-xl shadow-xl p-4 sm:p-5 md:p-6 border border-steel/10">
               {/* System Size Slider */}
-              <div className="mb-8">
-                <div className="flex justify-between items-center mb-4">
-                  <label className="text-midnight font-bold text-lg">
+              <div className="mb-4 sm:mb-6">
+                <div className="flex justify-between items-center mb-2 sm:mb-3">
+                  <label className="text-midnight font-bold text-xs sm:text-sm md:text-base">
                     Select System Size
                   </label>
-                  <span className="text-4xl font-bold text-gold">
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gold">
                     {systemSize} kW
                   </span>
                 </div>
@@ -72,94 +71,92 @@ const ROICalculator = memo(() => {
                   onChange={(e) => setSystemSize(Number(e.target.value))}
                   className="w-full slider-gold"
                 />
-                <div className="flex justify-between text-sm text-slate mt-2">
+                <div className="flex justify-between text-[10px] sm:text-xs text-slate mt-1.5">
                   <span>1 kW</span>
                   <span>10 kW</span>
                 </div>
               </div>
 
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-gradient-to-br from-gold/10 to-gold/5 p-4 rounded-xl">
-                  <Zap className="w-6 h-6 text-gold mb-2" />
-                  <div className="text-2xl font-bold text-midnight">{results.unitsPerMonth}</div>
-                  <div className="text-sm text-slate">Units/Month</div>
+              {/* Quick Stats - Smaller */}
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
+                <div className="bg-gradient-to-br from-gold/10 to-gold/5 p-2.5 sm:p-3 rounded-lg">
+                  <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-gold mb-1" />
+                  <div className="text-base sm:text-lg md:text-xl font-bold text-midnight">{results.unitsPerMonth}</div>
+                  <div className="text-[9px] sm:text-[10px] text-slate">Units/Month</div>
                 </div>
-                <div className="bg-gradient-to-br from-steel/10 to-steel/5 p-4 rounded-xl">
-                  <Home className="w-6 h-6 text-steel mb-2" />
-                  <div className="text-2xl font-bold text-midnight">{results.areaSqft}</div>
-                  <div className="text-sm text-slate">Sq.Ft Required</div>
+                <div className="bg-gradient-to-br from-steel/10 to-steel/5 p-2.5 sm:p-3 rounded-lg">
+                  <Home className="w-4 h-4 sm:w-5 sm:h-5 text-steel mb-1" />
+                  <div className="text-base sm:text-lg md:text-xl font-bold text-midnight">{results.areaSqft}</div>
+                  <div className="text-[9px] sm:text-[10px] text-slate">Sq.Ft Required</div>
                 </div>
               </div>
 
-              {/* Pricing Box */}
-              <div className="bg-gradient-to-br from-midnight to-steel text-pearl p-6 rounded-xl mb-6">
-                <h3 className="text-xl font-bold mb-4 text-gold flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5" />
+              {/* Pricing Box - Smaller */}
+              <div className="bg-gradient-to-br from-midnight to-steel text-pearl p-3 sm:p-4 md:p-5 rounded-lg mb-4">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold mb-2 sm:mb-3 text-gold flex items-center gap-2">
+                  <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                   Complete Pricing
                 </h3>
                 
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between text-sm">
+                <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+                  <div className="flex justify-between text-[10px] sm:text-xs">
                     <span className="text-slate">Total System Cost</span>
                     <span className="font-semibold">{formatCurrency(results.fullPrice)}</span>
                   </div>
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-[10px] sm:text-xs">
                     <span className="text-green-400">Govt Subsidy</span>
                     <span className="font-semibold text-green-400">- {formatCurrency(results.govtSubsidy)}</span>
                   </div>
                   <div className="h-px bg-gold/30"></div>
-                  <div className="flex justify-between">
-                    <span className="font-bold text-gold">You Pay</span>
-                    <span className="text-2xl font-bold text-gold">{formatCurrency(results.customerPays)}</span>
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-gold text-xs sm:text-sm">You Pay</span>
+                    <span className="text-lg sm:text-xl font-bold text-gold">{formatCurrency(results.customerPays)}</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 text-center">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 text-center">
                   <div>
-                    <div className="text-2xl font-bold">{formatCurrency(results.monthlyBillSave)}</div>
-                    <div className="text-xs text-slate">Monthly Savings</div>
+                    <div className="text-sm sm:text-base md:text-lg font-bold">{formatCurrency(results.monthlyBillSave)}</div>
+                    <div className="text-[9px] sm:text-[10px] text-slate">Monthly Savings</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold">{results.paybackPeriod} yrs</div>
-                    <div className="text-xs text-slate">Payback Period</div>
+                    <div className="text-sm sm:text-base md:text-lg font-bold">{results.paybackPeriod} yrs</div>
+                    <div className="text-[9px] sm:text-[10px] text-slate">Payback Period</div>
                   </div>
                 </div>
               </div>
 
-              {/* 25-Year Total Savings: Per 1kW = ₹288,000 (120 units × ₹8 × 12 months × 25 years) */}
-              <div className="bg-gradient-to-r from-gold/20 to-yellow-500/20 p-4 rounded-xl mb-6">
-                <div className="text-gold font-semibold text-sm mb-1">25-Year Electricity Bill Savings</div>
-                <div className="text-3xl font-bold text-midnight">{formatCurrency(results.totalSavings25Years)}</div>
-                <div className="text-xs text-slate mt-1">Total electricity cost saved over 25 years</div>
+              {/* 25-Year Savings - Smaller */}
+              <div className="bg-gradient-to-r from-gold/20 to-yellow-500/20 p-2.5 sm:p-3 rounded-lg mb-3 sm:mb-4">
+                <div className="text-gold font-semibold text-[10px] sm:text-xs mb-0.5">25-Year Electricity Bill Savings</div>
+                <div className="text-xl sm:text-2xl font-bold text-midnight">{formatCurrency(results.totalSavings25Years)}</div>
+                <div className="text-[9px] sm:text-[10px] text-slate mt-0.5">Total electricity cost saved over 25 years</div>
               </div>
 
               <a href="tel:+916281253858">
-                <Button variant="primary" size="lg" className="w-full text-lg">
+                <Button variant="primary" size="md" className="w-full text-xs sm:text-sm py-2 sm:py-2.5">
                   Get Your Free Quote Now
                 </Button>
               </a>
 
-              <p className="text-xs text-slate text-center mt-4">
-                * Subsidy comes to your bank in 3-6 months
+              <p className="text-[9px] sm:text-[10px] text-slate text-center mt-2 sm:mt-3">
+                * Subsidy comes to your bank in 1-3 months
               </p>
             </div>
 
-            {/* RIGHT: Image/Visual */}
-            <div className="hidden lg:block">
+            {/* RIGHT: Benefits Card - Smaller */}
+            <div className="lg:block">
               <div className="relative">
-                {/* Decorative Elements */}
-                <div className="absolute -top-10 -left-10 w-64 h-64 bg-gold/20 rounded-full filter blur-3xl animate-pulse"></div>
-                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-steel/20 rounded-full filter blur-3xl animate-pulse"></div>
+                <div className="absolute -top-10 -left-10 w-40 h-40 sm:w-48 sm:h-48 bg-gold/20 rounded-full filter blur-3xl animate-pulse"></div>
+                <div className="absolute -bottom-10 -right-10 w-40 h-40 sm:w-48 sm:h-48 bg-steel/20 rounded-full filter blur-3xl animate-pulse"></div>
                 
-                {/* Main Visual Card */}
-                <div className="relative bg-gradient-to-br from-midnight via-steel to-midnight p-8 rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                <div className="relative bg-gradient-to-br from-midnight via-steel to-midnight p-4 sm:p-6 md:p-7 rounded-lg sm:rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-500">
                   <div className="text-center text-pearl">
-                    <div className="w-24 h-24 bg-gradient-to-br from-gold to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <Sun className="w-16 h-16 text-midnight" />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-gold to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <Sun className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-midnight" />
                     </div>
-                    <h3 className="text-3xl font-bold mb-4">Why Go Solar?</h3>
-                    <div className="space-y-4 text-left">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Why Go Solar?</h3>
+                    <div className="space-y-2 sm:space-y-3 text-left">
                       {[
                         { icon: '✓', text: 'Save up to 90% on electricity bills' },
                         { icon: '✓', text: 'Government subsidy up to ₹78,000' },
@@ -168,16 +165,16 @@ const ROICalculator = memo(() => {
                         { icon: '✓', text: 'Increase property value' },
                         { icon: '✓', text: 'Zero maintenance for 25+ years' },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center gap-3">
-                          <span className="text-gold text-2xl">{item.icon}</span>
-                          <span className="text-slate">{item.text}</span>
+                        <div key={index} className="flex items-center gap-2">
+                          <span className="text-gold text-base sm:text-lg">{item.icon}</span>
+                          <span className="text-slate text-[10px] sm:text-xs md:text-sm">{item.text}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="mt-8 p-4 bg-gold/10 rounded-xl border border-gold/30">
-                      <div className="text-4xl font-bold text-gold mb-1">5,000+</div>
-                      <div className="text-sm text-slate">Happy Customers in Hyderabad</div>
+                    <div className="mt-4 sm:mt-6 p-2.5 sm:p-3 bg-gold/10 rounded-lg border border-gold/30">
+                      <div className="text-2xl sm:text-3xl font-bold text-gold mb-0.5">5,000+</div>
+                      <div className="text-[10px] sm:text-xs text-slate">Happy Customers in Hyderabad</div>
                     </div>
                   </div>
                 </div>
@@ -192,8 +189,8 @@ const ROICalculator = memo(() => {
           -webkit-appearance: none;
           appearance: none;
           width: 100%;
-          height: 8px;
-          border-radius: 4px;
+          height: 5px;
+          border-radius: 3px;
           outline: none;
           cursor: pointer;
           background: linear-gradient(to right, 
@@ -204,63 +201,58 @@ const ROICalculator = memo(() => {
           );
         }
 
+        @media (min-width: 640px) {
+          .slider-gold {
+            height: 6px;
+          }
+        }
+
         .slider-gold::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          width: 24px;
-          height: 24px;
+          width: 18px;
+          height: 18px;
           background: linear-gradient(135deg, #FFB703, #FFA500);
-          border: 4px solid white;
+          border: 3px solid white;
           border-radius: 50%;
           cursor: pointer;
-          box-shadow: 0 2px 8px rgba(255, 183, 3, 0.6);
+          box-shadow: 0 2px 6px rgba(255, 183, 3, 0.5);
           transition: all 0.3s ease;
-          margin-top: 0;
+        }
+
+        @media (min-width: 640px) {
+          .slider-gold::-webkit-slider-thumb {
+            width: 20px;
+            height: 20px;
+          }
         }
 
         .slider-gold::-webkit-slider-thumb:hover {
-          transform: scale(1.2);
-          box-shadow: 0 4px 12px rgba(255, 183, 3, 0.9);
+          transform: scale(1.15);
+          box-shadow: 0 3px 10px rgba(255, 183, 3, 0.8);
         }
 
         .slider-gold::-moz-range-thumb {
-          width: 24px;
-          height: 24px;
+          width: 18px;
+          height: 18px;
           background: linear-gradient(135deg, #FFB703, #FFA500);
-          border: 4px solid white;
+          border: 3px solid white;
           border-radius: 50%;
           cursor: pointer;
-          box-shadow: 0 2px 8px rgba(255, 183, 3, 0.6);
+          box-shadow: 0 2px 6px rgba(255, 183, 3, 0.5);
           transition: all 0.3s ease;
         }
 
+        @media (min-width: 640px) {
+          .slider-gold::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
         .slider-gold::-moz-range-thumb:hover {
-          transform: scale(1.2);
-          box-shadow: 0 4px 12px rgba(255, 183, 3, 0.9);
-        }
-
-        .slider-gold::-moz-range-track {
-          height: 8px;
-          border-radius: 4px;
-          background: #e5e7eb;
-        }
-
-        .slider-gold::-ms-thumb {
-          width: 24px;
-          height: 24px;
-          background: linear-gradient(135deg, #FFB703, #FFA500);
-          border: 4px solid white;
-          border-radius: 50%;
-          cursor: pointer;
-          box-shadow: 0 2px 8px rgba(255, 183, 3, 0.6);
-        }
-
-        .slider-gold::-ms-track {
-          height: 8px;
-          border-radius: 4px;
-          background: transparent;
-          border-color: transparent;
-          color: transparent;
+          transform: scale(1.15);
+          box-shadow: 0 3px 10px rgba(255, 183, 3, 0.8);
         }
       `}</style>
     </section>
