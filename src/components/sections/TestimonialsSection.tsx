@@ -34,7 +34,7 @@ const TestimonialsSection = memo(() => {
         {/* Header - Much smaller */}
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-midnight mb-2 sm:mb-3">
-            Trusted by <span className="text-gold">5,000+</span> Customers
+            Trusted by <span className="text-gold">500+</span> Customers
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-slate max-w-2xl mx-auto">
             Real stories from real customers

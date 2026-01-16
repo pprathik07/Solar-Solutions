@@ -17,10 +17,11 @@ const Button = memo<ButtonProps>(
     isLoading = false,
     className,
     disabled,
+    type = 'button',
     ...props
   }) => {
     const baseStyles =
-      'font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center';
+      'font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2';
 
     const variants = {
       primary: 'bg-gold text-midnight hover:bg-gold/90 shadow-lg hover:shadow-xl',
@@ -36,11 +37,21 @@ const Button = memo<ButtonProps>(
 
     return (
       <button
+        type={type}
         className={cn(baseStyles, variants[variant], sizes[size], className)}
         disabled={disabled || isLoading}
+        aria-busy={isLoading}
+        aria-disabled={disabled || isLoading}
         {...props}
       >
-        {isLoading ? 'Loading...' : children}
+        {isLoading ? (
+          <>
+            <span className="sr-only">Loading</span>
+            <span aria-hidden="true">Loading...</span>
+          </>
+        ) : (
+          children
+        )}
       </button>
     );
   }

@@ -1,9 +1,9 @@
 ﻿// src/lib/constants.ts
 
 export const COMPANY_INFO = {
-  name: 'Vajra RENEW',
-  phone: '+91-6281253858',
-  email: 'Vajra-Renew@gmail.com',
+  name: 'Vajra Renew',
+  phone: '+91-9246344969',
+  email: 'vajrarenew@gmail.com',
   address: 'Near Bhashyam School, Peerzadiguda, Telangana',
   location: 'Peerzadiguda, Telangana, Telangana',
   experience: '6+',

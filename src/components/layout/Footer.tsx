@@ -1,46 +1,58 @@
 ﻿'use client';
 
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { COMPANY_INFO, NAVIGATION_LINKS } from '@/lib/constants';
 
 const Footer = memo(() => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
 
-  const serviceLinks = [
+  const servicesLinks = useMemo(() => [
     { name: 'Residential Solar', href: '/services/residential' },
     { name: 'Commercial Solar', href: '/services/commercial' },
     { name: 'Industrial Solar', href: '/services/industrial' },
-    { name: 'Maintenance', href: '/services' }
-  ];
+    { name: 'Maintenance & AMC', href: '/services' },
+  ], []);
 
   return (
-    <footer className="bg-gradient-to-b from-midnight to-steel text-pearl">
-      <div className="container mx-auto px-4 py-6 sm:py-8 md:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-4 sm:mb-6">
-          {/* Company Info - Smaller */}
+    <footer className="bg-midnight text-pearl pt-12 pb-6">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-1.5 mb-2 sm:mb-3">
-              <div className="w-7 h-7 bg-gold rounded-full flex items-center justify-center">
-                <span className="text-midnight text-base">☀</span>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 relative flex-shrink-0 rounded-lg bg-white p-1.5 border-2 border-gold/40">
+                <Image
+                  src="/images/vajrarenew.png"
+                  alt="Vajra Renew Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                  loading="lazy"
+                  quality={75}
+                />
               </div>
-              <span className="text-base sm:text-lg font-bold">VAJRA RENEW</span>
+              <div className="flex flex-col">
+                <span className="text-base sm:text-lg font-bold">VAJRA RENEW</span>
+                <span className="text-[9px] sm:text-[10px] text-slate-400">By Vajra Enterprises</span>
+              </div>
             </div>
-            <p className="text-[10px] sm:text-xs text-slate mb-2 sm:mb-3 leading-relaxed">
-              Telangana's trusted solar partner with 6+ years experience.
+            <p className="text-sm text-slate-400 mb-4">
+              Your trusted partner for solar energy solutions in Telangana with 6+ years of excellence.
             </p>
           </div>
 
-          {/* Quick Links - Smaller */}
+          {/* Quick Links */}
           <div>
-            <h3 className="text-gold font-bold text-xs sm:text-sm mb-2 sm:mb-3">Quick Links</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
+            <h3 className="text-gold font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
               {NAVIGATION_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="text-[10px] sm:text-xs text-slate hover:text-gold transition-colors"
+                    className="text-sm text-slate-400 hover:text-gold transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -49,15 +61,15 @@ const Footer = memo(() => {
             </ul>
           </div>
 
-          {/* Services - Smaller */}
+          {/* Services */}
           <div>
-            <h3 className="text-gold font-bold text-xs sm:text-sm mb-2 sm:mb-3">Services</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
-              {serviceLinks.map((link) => (
+            <h3 className="text-gold font-bold mb-4">Our Services</h3>
+            <ul className="space-y-2">
+              {servicesLinks.map((link) => (
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="text-[10px] sm:text-xs text-slate hover:text-gold transition-colors"
+                    className="text-sm text-slate-400 hover:text-gold transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -66,29 +78,23 @@ const Footer = memo(() => {
             </ul>
           </div>
 
-          {/* Contact - Smaller */}
+          {/* Contact Info */}
           <div>
-            <h3 className="text-gold font-bold text-xs sm:text-sm mb-2 sm:mb-3">Contact</h3>
-            <ul className="space-y-1.5 sm:space-y-2">
-              <li className="flex items-start gap-1.5 sm:gap-2">
-                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold mt-0.5 flex-shrink-0" />
-                <span className="text-[10px] sm:text-xs text-slate">{COMPANY_INFO.address}</span>
+            <h3 className="text-gold font-bold mb-4">Contact Us</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-gold mt-1 flex-shrink-0" />
+                <span className="text-sm text-slate-400">{COMPANY_INFO.address}</span>
               </li>
-              <li className="flex items-center gap-1.5 sm:gap-2">
-                <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold flex-shrink-0" />
-                <a 
-                  href={`tel:${COMPANY_INFO.phone}`} 
-                  className="text-[10px] sm:text-xs text-slate hover:text-gold transition-colors"
-                >
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-gold flex-shrink-0" />
+                <a href={`tel:${COMPANY_INFO.phone}`} className="text-sm text-slate-400 hover:text-gold transition-colors">
                   {COMPANY_INFO.phone}
                 </a>
               </li>
-              <li className="flex items-center gap-1.5 sm:gap-2">
-                <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gold flex-shrink-0" />
-                <a 
-                  href={`mailto:${COMPANY_INFO.email}`} 
-                  className="text-[10px] sm:text-xs text-slate hover:text-gold transition-colors break-all"
-                >
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-gold flex-shrink-0" />
+                <a href={`mailto:${COMPANY_INFO.email}`} className="text-sm text-slate-400 hover:text-gold transition-colors">
                   {COMPANY_INFO.email}
                 </a>
               </li>
@@ -96,10 +102,10 @@ const Footer = memo(() => {
           </div>
         </div>
 
-        {/* Bottom Bar - Smaller */}
-        <div className="pt-4 sm:pt-6 border-t border-steel/30 text-center">
-          <p className="text-[10px] sm:text-xs text-slate">
-            © {currentYear} {COMPANY_INFO.name}. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="border-t border-steel/20 pt-6 text-center">
+          <p className="text-sm text-slate-400">
+            © {currentYear} Vajra Renew. All rights reserved.
           </p>
         </div>
       </div>

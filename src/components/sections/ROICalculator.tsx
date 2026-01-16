@@ -133,7 +133,7 @@ const ROICalculator = memo(() => {
                 <div className="text-[9px] sm:text-[10px] text-slate mt-0.5">Total electricity cost saved over 25 years</div>
               </div>
 
-              <a href="tel:+916281253858">
+              <a href="tel:+919246344969">
                 <Button variant="primary" size="md" className="w-full text-xs sm:text-sm py-2 sm:py-2.5">
                   Get Your Free Quote Now
                 </Button>
@@ -173,7 +173,7 @@ const ROICalculator = memo(() => {
                     </div>
 
                     <div className="mt-4 sm:mt-6 p-2.5 sm:p-3 bg-gold/10 rounded-lg border border-gold/30">
-                      <div className="text-2xl sm:text-3xl font-bold text-gold mb-0.5">5,000+</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-gold mb-0.5">500+</div>
                       <div className="text-[10px] sm:text-xs text-slate">Happy Customers in Hyderabad</div>
                     </div>
                   </div>

@@ -1,0 +1,21 @@
+{
+  "name": "Vajra Renew - Solar Energy Solutions",
+  "short_name": "Vajra Renew",
+  "description": "Telangana's trusted solar installation partner with 6+ years experience",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a2332",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "/images/vajrarenew.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/vajrarenew.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

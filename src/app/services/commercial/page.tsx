@@ -50,7 +50,7 @@ export default function CommercialPage() {
           <p className="text-sm sm:text-base md:text-lg text-slate mb-4 sm:mb-6">
             ROI: 3-4 years | Cost Reduction: 60-80%
           </p>
-          <a href="tel:+916281253858">
+          <a href="tel:+919246344969">
             <Button variant="primary" size="md" className="text-xs sm:text-sm">
               <Phone className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-2" />
               Schedule Business Consultation

@@ -165,9 +165,9 @@ export default function ServicesPage() {
           <p className="text-sm sm:text-base md:text-lg text-slate mb-4 sm:mb-6">
             Our experts will analyze your requirements and recommend the perfect solution
           </p>
-          <a href="tel:+916281253858">
+          <a href="tel:+919246344969">
             <Button variant="primary" size="md" className="text-xs sm:text-sm">
-              Call +91-6281253858 for Free Consultation
+              Call +91-9246344969 for Free Consultation
             </Button>
           </a>
         </div>

@@ -1,0 +1,11 @@
+# robots.txt for Vajra Renew
+# Allow all crawlers
+
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive paths (if any)
+Disallow: /api/
+
+# Sitemap location (update when you create one)
+Sitemap: https://vajrarenew.com/sitemap.xml

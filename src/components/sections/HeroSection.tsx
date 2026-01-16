@@ -42,7 +42,7 @@ const HeroSection = memo(() => {
 
           {/* CTA Buttons - Smaller */}
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center mb-8 sm:mb-10 md:mb-12 px-4 max-w-md mx-auto">
-            <a href="tel:+916281253858" className="w-full sm:w-auto">
+            <a href="tel:+919246344969" className="w-full sm:w-auto">
               <Button variant="primary" size="md" className="w-full sm:w-auto text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5">
                 <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                 Get Free Quote

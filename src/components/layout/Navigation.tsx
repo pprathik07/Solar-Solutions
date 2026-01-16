@@ -1,17 +1,30 @@
 ﻿'use client';
 
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
+import Image from 'next/image';
 import { Phone, Sun } from 'lucide-react';
 import Button from '@/components/ui/Button';
 
 const Navigation = memo(() => {
+  const handleCall = useCallback(() => {
+    window.location.href = 'tel:+916281253858';
+  }, []);
+
   return (
     <nav className="bg-midnight border-b border-steel/20 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <a href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center">
-              <Sun className="w-7 h-7 text-midnight" />
+            <div className="w-12 h-12 relative flex-shrink-0 rounded-full bg-white p-1 border-2 border-gold/60 hover:border-gold hover:shadow-lg hover:shadow-gold/50 transition-all">
+              <Image
+                src="/images/vajrarenew.png"
+                alt="Vajra Renew Logo"
+                width={56}
+                height={56}
+                className="object-contain"
+                priority
+                quality={85}
+              />
             </div>
             <div>
               <div className="text-xl font-bold text-pearl">VAJRA RENEW</div>
@@ -27,12 +40,14 @@ const Navigation = memo(() => {
             <a href="/contact" className="text-pearl hover:text-gold transition-colors">Contact</a>
           </div>
 
-          <a href="tel:+916281253858">
-            <Button variant="primary" className="hidden md:flex">
-              <Phone className="w-4 h-4 mr-2" />
-              Call Now
-            </Button>
-          </a>
+          <Button 
+            variant="primary" 
+            className="hidden md:flex"
+            onClick={handleCall}
+          >
+            <Phone className="w-4 h-4 mr-2" />
+            Call Now
+          </Button>
         </div>
       </div>
     </nav>
