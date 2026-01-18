@@ -1,4 +1,5 @@
-﻿import type { Metadata } from 'next';
+﻿// src/app/layout.tsx
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -124,10 +125,7 @@ export default function RootLayout({
       }
     ],
     "sameAs": [
-      // Add your social media URLs here
-      "https://www.instagram.com/vajraenterprises.solar?utm_source=qr&igsh=eWl6OHExYjhncmg5",
-      // "https://www.linkedin.com/company/vajrarenew",
-      // "https://twitter.com/vajrarenew"
+      "https://www.instagram.com/vajraenterprises.solar?utm_source=qr&igsh=eWl6OHExYjhncmg5"
     ]
   };
 
@@ -148,8 +146,8 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <head>
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <meta name="theme-color" content="#1a2332" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
+        <meta name="theme-color" content="#1B263B" />
         
         {/* JSON-LD Schema Markup for Google */}
         <script

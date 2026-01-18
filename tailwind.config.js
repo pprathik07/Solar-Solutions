@@ -17,6 +17,8 @@ module.exports = {
       animation: {
         'float': 'float 3s ease-in-out infinite',
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'spin-slow': 'spin 3s linear infinite',
+        'spin-reverse': 'spin 1s linear infinite reverse',
       },
       keyframes: {
         float: {
@@ -26,6 +28,10 @@ module.exports = {
         pulseGlow: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.7' },
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
       },
     },
