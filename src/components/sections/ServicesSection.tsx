@@ -44,7 +44,7 @@ const services = [
     features: ['Regular cleaning', '24/7 monitoring', 'Quick repairs'],
     href: '/services',
     linkText: 'Learn more about solar maintenance services',
-    image: '/images/residential-solar.png', // Using residential as fallback - replace with maintenance image if you have one
+    image: '/images/maintenance.png',
     imageAlt: 'Professional solar panel maintenance and AMC services in Hyderabad'
   }
 ];
