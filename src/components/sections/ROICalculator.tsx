@@ -173,7 +173,7 @@ const ROICalculator = memo(() => {
                     </div>
 
                     <div className="mt-4 sm:mt-6 p-2.5 sm:p-3 bg-gold/10 rounded-lg border border-gold/30">
-                      <div className="text-2xl sm:text-3xl font-bold text-gold mb-0.5">500+</div>
+                      <div className="text-2xl sm:text-3xl font-bold text-gold mb-0.5">1000+</div>
                       <div className="text-[10px] sm:text-xs text-slate">Happy Customers in Hyderabad</div>
                     </div>
                   </div>

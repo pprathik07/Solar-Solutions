@@ -1,28 +1,17 @@
-'use client';
-
-import React, { memo, ButtonHTMLAttributes } from 'react';
+// src/components/ui/Button.tsx
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
-  isLoading?: boolean;
+  children: React.ReactNode;
 }
 
-const Button = memo<ButtonProps>(
-  ({
-    children,
-    variant = 'primary',
-    size = 'md',
-    isLoading = false,
-    className,
-    disabled,
-    type = 'button',
-    ...props
-  }) => {
-    const baseStyles =
-      'font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2';
-
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant = 'primary', size = 'md', className, children, ...props }, ref) => {
+    const baseStyles = 'font-semibold rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2';
+    
     const variants = {
       primary: 'bg-gold text-midnight hover:bg-gold/90 shadow-lg hover:shadow-xl',
       secondary: 'bg-steel text-pearl hover:bg-steel/90',
@@ -37,25 +26,16 @@ const Button = memo<ButtonProps>(
 
     return (
       <button
-        type={type}
+        ref={ref}
         className={cn(baseStyles, variants[variant], sizes[size], className)}
-        disabled={disabled || isLoading}
-        aria-busy={isLoading}
-        aria-disabled={disabled || isLoading}
         {...props}
       >
-        {isLoading ? (
-          <>
-            <span className="sr-only">Loading</span>
-            <span aria-hidden="true">Loading...</span>
-          </>
-        ) : (
-          children
-        )}
+        {children}
       </button>
     );
   }
 );
 
 Button.displayName = 'Button';
-export default Button;
+
+export default Button; // ✅ DEFAULT EXPORT

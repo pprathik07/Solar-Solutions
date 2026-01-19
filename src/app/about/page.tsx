@@ -4,8 +4,8 @@ import Card from '@/components/ui/Card';
 import { COMPANY_INFO } from '@/lib/constants';
 
 export const metadata = {
-  title: 'About Us | Vajra Renew - 6+ Years Solar Excellence',
-  description: '6+ years experience, 500+ installations. Learn about Telangana\'s most trusted solar company.',
+  title: 'About Us | Vajra Renew - 10+ Years Solar Excellence',
+  description: '10+ years experience, 1000+ installations. Learn about Telangana\'s most trusted solar company.',
 };
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
     {
       icon: <Award className="w-8 h-8 sm:w-10 sm:h-10 text-gold" />,
       title: 'Proven Expertise',
-      description: 'Over 6 years in the solar industry with 500+ successful installations across Telangana.',
+      description: 'Over 10 years in the solar industry with 1000+ successful installations across Telangana.',
     },
     {
       icon: <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-gold" />,
@@ -398,7 +398,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">Ready to Start Your Solar Journey?</h2>
           <p className="text-sm sm:text-base md:text-lg text-slate mb-4 sm:mb-6">
-            Join 500+ satisfied customers who trust Vajra Renew
+            Join 1000+ satisfied customers who trust Vajra Renew
           </p>
           <a href="/contact" className="inline-block bg-gold text-midnight px-6 py-2.5 sm:px-8 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-gold/90 transition-colors">
             Get Free Consultation

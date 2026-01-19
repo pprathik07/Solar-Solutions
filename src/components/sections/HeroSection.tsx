@@ -33,7 +33,7 @@ const HeroSection = memo(() => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gold/20 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-3 sm:mb-4 border border-gold/30">
-            <span className="text-gold font-semibold text-[10px] sm:text-xs">🏆 6+ Years • 500+ Installations</span>
+            <span className="text-gold font-semibold text-[10px] sm:text-xs">🏆 10+ Years • 1000+ Installations</span>
           </div>
 
           {/* Main Heading */}
@@ -49,9 +49,9 @@ const HeroSection = memo(() => {
 
           {/* Trust Points */}
           <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 text-pearl mb-5 sm:mb-6 md:mb-8 px-4 text-[10px] sm:text-xs">
-            <span className="whitespace-nowrap">✓ 6+ Years of Excellence</span>
+            <span className="whitespace-nowrap">✓ 10+ Years of Excellence</span>
             <span className="hidden sm:inline">•</span>
-            <span className="whitespace-nowrap">✓ 500+ Happy Customers</span>
+            <span className="whitespace-nowrap">✓ 1000+ Happy Customers</span>
             <span className="hidden sm:inline">•</span>
             <span className="whitespace-nowrap">✓ 25-Year Warranty</span>
           </div>
@@ -76,8 +76,8 @@ const HeroSection = memo(() => {
         {/* Stats with Icon Badges */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 max-w-4xl mx-auto px-4">
           {[
-            { icon: Award, value: '6+', label: 'Years Experience' },
-            { icon: Users, value: '500+', label: 'Happy Customers' },
+            { icon: Award, value: '10+', label: 'Years Experience' },
+            { icon: Users, value: '1000+', label: 'Happy Customers' },
             { icon: Zap, value: '25L+', label: 'Units Generated' },
             { icon: Shield, value: '25 Years', label: 'Panel Warranty' }
           ].map((stat, index) => (

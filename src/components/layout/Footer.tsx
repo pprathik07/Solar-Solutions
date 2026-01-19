@@ -40,7 +40,7 @@ const Footer = memo(() => {
               </div>
             </div>
             <p className="text-sm text-slate-400 mb-4">
-              Your trusted partner for solar energy solutions in Telangana with 6+ years of excellence.
+              Your trusted partner for solar energy solutions in Telangana with 10+ years of excellence.
             </p>
           </div>
 

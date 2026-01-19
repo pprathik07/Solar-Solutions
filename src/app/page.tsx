@@ -65,12 +65,12 @@ export default function Home() {
 
 // Metadata for SEO
 export const metadata = {
-  title: 'Vajra Renew - Solar Energy Solutions in Telangana | 6+ Years Experience',
-  description: 'Telangana\'s most trusted solar installation partner. 500+ installations, government subsidy assistance, 25-year warranty. Save up to 90% on electricity bills.',
+  title: 'Vajra Renew - Solar Energy Solutions in Telangana | 10+ Years Experience',
+  description: 'Telangana\'s most trusted solar installation partner. 1000+ installations, government subsidy assistance, 25-year warranty. Save up to 90% on electricity bills.',
   keywords: 'solar panels Hyderabad, solar installation Telangana, residential solar, commercial solar, PM Surya Ghar Yojana, solar subsidy Telangana',
   openGraph: {
     title: 'Vajra Renew - Solar Energy Solutions in Telangana',
-    description: '6+ years experience, 500+ happy customers. Get up to ₹78,000 government subsidy on solar installation.',
+    description: '10+ years experience, 1000+ happy customers. Get up to ₹78,000 government subsidy on solar installation.',
     images: ['/images/hero-background.png'],
   },
 };

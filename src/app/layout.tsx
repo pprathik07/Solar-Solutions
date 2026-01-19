@@ -1,22 +1,66 @@
-﻿// src/app/layout.tsx
+﻿/**
+ * Root Layout
+ * 
+ * Main application layout for Vajra Renew
+ * Includes both Solar and Battery businesses
+ * 
+ * UPDATED: Added FloatingBatteryButton for cross-promotion
+ * 
+ * @layout
+ */
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import FloatingBatteryButton from '@/components/layout/FloatingBatteryButton';
 
-// Optimize font loading
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  variable: '--font-inter',
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://vajrarenew.com'),
-  title: 'Vajra Renew | Solar Energy Solutions in Telangana',
-  description: 'Trusted solar installation partner in Telangana with 6+ years experience. Residential, commercial, and industrial solar solutions.',
-  keywords: ['solar energy', 'solar panels', 'Telangana', 'renewable energy', 'solar installation', 'solar company', 'rooftop solar', 'PM Surya Ghar'],
+  title: {
+    default: 'Vajra Renew - Solar Energy Solutions in Telangana | 10+ Years Experience',
+    template: '%s | Vajra Renew',
+  },
+  description: 'Telangana\'s most trusted solar installation partner. 1000+ installations, government subsidy assistance up to ₹78,000, 25-year warranty. Residential, commercial & industrial solar solutions.',
+  keywords: [
+    'solar panels Hyderabad',
+    'solar installation Telangana',
+    'rooftop solar',
+    'PM Surya Ghar Yojana',
+    'solar subsidy Hyderabad',
+    'solar companies Telangana',
+  ].join(', '),
   authors: [{ name: 'Vajra Renew' }],
+  creator: 'Vajra Renew',
+  publisher: 'Vajra Renew',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://vajrarenew.com',
+    siteName: 'Vajra Renew',
+    title: 'Vajra Renew - Solar Energy Solutions in Telangana',
+    description: '1000+ installations across Hyderabad. Government subsidy assistance. 25-year warranty.',
+    images: [
+      {
+        url: '/images/hero-background.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Vajra Renew Solar Installation',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vajra Renew - Solar Energy Solutions Telangana',
+    description: '1000+ installations. 25-year warranty. Government subsidy assistance.',
+    images: ['/images/hero-background.png'],
+  },
   robots: {
     index: true,
     follow: true,
@@ -28,35 +72,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  openGraph: {
-    title: 'Vajra Renew | Solar Energy Solutions',
-    description: 'Trusted solar installation partner in Telangana with 6+ years experience',
-    url: 'https://vajrarenew.com',
-    siteName: 'Vajra Renew',
-    images: [
-      {
-        url: '/images/vajrarenew.png',
-        width: 1200,
-        height: 630,
-        alt: 'Vajra Renew Solar Energy Solutions Logo',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Vajra Renew | Solar Energy Solutions',
-    description: 'Trusted solar installation partner in Telangana with 6+ years experience',
-    images: ['/images/vajrarenew.png'],
-  },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/images/vajrarenew.png',
-  },
-  alternates: {
-    canonical: 'https://vajrarenew.com',
+  verification: {
+    // Add your verification codes here when available
+    // google: 'your-google-verification-code',
+    // other: {
+    //   'bing': 'your-bing-verification-code',
+    // },
   },
 };
 
@@ -65,101 +86,38 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // JSON-LD Organization Schema for Google Search
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Vajra Renew",
-    "alternateName": "Vajra Renew Solar",
-    "description": "Trusted solar installation partner in Telangana with 6+ years experience. Residential, commercial, and industrial solar solutions.",
-    "url": "https://vajrarenew.com",
-    "logo": "https://vajrarenew.com/images/logo-square.png",
-    "image": "https://vajrarenew.com/images/logo-square.png",
-    "telephone": "+91-9246344969", 
-    "email": "vajrarenew@gmail.com", 
-    "priceRange": "$$",
-    "foundingDate": "2015",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Hyderabad",
-      "addressRegion": "Telangana",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "17.3967",
-      "longitude": "78.5905"
-    },
-    "areaServed": {
-      "@type": "State",
-      "name": "Telangana"
-    },
-    "serviceArea": {
-      "@type": "State",
-      "name": "Telangana"
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Residential Solar Installation",
-          "description": "Complete solar panel installation for homes"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Commercial Solar Solutions",
-          "description": "Solar energy systems for businesses"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Industrial Solar Installation",
-          "description": "Large-scale solar installations for industries"
-        }
-      }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/vajraenterprises.solar?utm_source=qr&igsh=eWl6OHExYjhncmg5"
-    ]
-  };
-
-  // Website Schema
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Vajra Renew",
-    "url": "https://vajrarenew.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://vajrarenew.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
-
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <head>
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
-        <meta name="theme-color" content="#1B263B" />
+        {/* Additional Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="theme-color" content="#1e293b" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo-square.png" />
         
-        {/* JSON-LD Schema Markup for Google */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
+        {/* Preconnect to important domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={inter.className} suppressHydrationWarning>{children}</body>
+      <body className={inter.className}>
+        {/* Main Content */}
+        {children}
+
+        {/* Floating Battery Button - Shows on solar pages */}
+        <FloatingBatteryButton />
+
+        {/* Analytics Scripts (add when ready) */}
+        {/* Google Analytics */}
+        {/* <Script src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script> */}
+      </body>
     </html>
   );
 }

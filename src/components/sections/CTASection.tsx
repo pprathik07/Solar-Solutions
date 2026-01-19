@@ -23,7 +23,7 @@ const CTASection = memo(() => {
           
           {/* Subheading - Smaller */}
           <p className="text-xs sm:text-sm md:text-base text-slate mb-4 sm:mb-6 md:mb-8 px-4">
-            Join 500+ satisfied customers who are already saving thousands every month
+            Join 1000+ satisfied customers who are already saving thousands every month
           </p>
 
           {/* Buttons - Smaller */}

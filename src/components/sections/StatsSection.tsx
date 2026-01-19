@@ -4,8 +4,8 @@ import React, { memo } from 'react';
 import { Award, Users, Zap, Shield } from 'lucide-react';
 
 const stats = [
-  { icon: Award, value: '6+', label: 'Years Experience', description: 'Years of excellence in solar' },
-  { icon: Users, value: '500+', label: 'Happy Customers', description: 'Trusted by thousands' },
+  { icon: Award, value: '10+', label: 'Years Experience', description: 'Years of excellence in solar' },
+  { icon: Users, value: '1000+', label: 'Happy Customers', description: 'Trusted by thousands' },
   { icon: Zap, value: '25L+', label: 'Units Generated', description: 'For our customers' },
   { icon: Shield, value: '25 Years', label: 'Panel Warranty', description: 'Premium quality guaranteed' }
 ];

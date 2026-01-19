@@ -3,7 +3,7 @@ import { MapPin, Zap } from 'lucide-react';
 import Card from '@/components/ui/Card';
 
 export const metadata = {
-  title: 'Solar Projects Portfolio | 500+ Installations Telangana',
+  title: 'Solar Projects Portfolio | 1000+ Installations Telangana',
   description: 'View our completed residential, commercial and industrial solar projects across Telangana.',
 };
 
@@ -44,7 +44,7 @@ export default function PortfolioPage() {
       <section className="bg-gradient-to-br from-midnight via-steel to-midnight text-pearl py-10 sm:py-12 md:py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-            500+ Successful Installations
+            1000+ Successful Installations
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-slate">
             Real projects, real customers, real savings across Telangana
@@ -56,7 +56,7 @@ export default function PortfolioPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             <div>
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold mb-1 sm:mb-2">500+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gold mb-1 sm:mb-2">1000+</div>
               <div className="text-xs sm:text-sm text-slate">Total Installations</div>
             </div>
             <div>
