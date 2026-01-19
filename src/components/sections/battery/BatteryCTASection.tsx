@@ -32,7 +32,7 @@ export const BatteryCTASection = memo(() => {
                 Call +91-9246344969
               </Button>
             </a>
-            <a href="mailto:battery@vajrarenew.com">
+            <a href="mailto:vajrarenew@gmail.com">
               <Button 
                 variant="secondary"
                 size="lg"

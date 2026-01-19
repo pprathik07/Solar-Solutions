@@ -152,7 +152,7 @@ export default function BatteryUPSPage() {
             '@id': 'https://vajrarenew.com/battery-ups',
             url: 'https://vajrarenew.com/battery-ups',
             telephone: '+91-9246344969',
-            email: 'battery@vajrarenew.com',
+            email: 'vajrarenew@gmail.com',
             address: {
               '@type': 'PostalAddress',
               streetAddress: 'Near Bhashyam School, Peerzadiguda',

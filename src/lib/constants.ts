@@ -49,7 +49,7 @@ export const BATTERY_COMPANY_INFO = {
   tagline: 'Battery & UPS Systems',
   subTagline: 'Never Face Power Cuts Again',
   phone: '+91-9246344969', // Same phone for now
-  email: 'battery@vajrarenew.com',
+  email: 'vajrarenew@gmail.com',
   address: 'Near Bhashyam School, Peerzadiguda, Telangana',
   location: 'Peerzadiguda, Hyderabad, Telangana',
   experience: '15+',
