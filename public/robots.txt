@@ -3,6 +3,7 @@
 
 User-agent: *
 Allow: /
+Allow: /battery-ups/
 
 # Disallow admin or sensitive paths (if any)
 Disallow: /api/
