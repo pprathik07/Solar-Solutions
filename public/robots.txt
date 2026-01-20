@@ -1,12 +1,18 @@
-# robots.txt for Vajra Renew
-# Allow all crawlers
+# Robots.txt for Vajra Renew
+# Solar Energy & Battery Solutions in Telangana
 
 User-agent: *
 Allow: /
+Allow: /services/
 Allow: /battery-ups/
 
-# Disallow admin or sensitive paths (if any)
-Disallow: /api/
+# Sitemap location
+Sitemap: https://www.vajrarenew.com/sitemap.xml
 
-# Sitemap location (update when you create one)
-Sitemap: https://vajrarenew.com/sitemap.xml
+# Optional: Block common directories if they exist
+# Disallow: /admin/
+# Disallow: /api/
+# Disallow: /_next/static/
+
+# Allow search engines to crawl all pages
+Crawl-delay: 0
